@@ -1,5 +1,3 @@
-// src/components/Footer.jsx
-
 import React from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -21,7 +19,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#12141f] text-gray-400 p-8 mt-12 border-t border-purple-800/50 relative z-10">
+    <footer className="w-full bg-[#12141f] text-gray-400 p-8 mt-12 border-t border-purple-800/50 z-10">
       <div className="container mx-auto max-w-6xl">
         
         {/* Top Section: Logo, Links, and Socials */}

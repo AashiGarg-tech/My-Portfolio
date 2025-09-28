@@ -10,6 +10,7 @@ function HeroSection() {
     deleteSpeed: 80, // Speed of deleting
     delaySpeed: 1000, // Pause time before deleting
   });
+  const RESUME_PATH = '/Resume-Aashi Garg (2).pdf'; 
   return (
     <section className="flex flex-col lg:flex-row items-center justify-center p-8 lg:p-16 text-white relative overflow-hidden flex-1 bg-[#0d0f19] min-h-screen">
       
@@ -22,7 +23,14 @@ function HeroSection() {
         I am a Computer Science and Engineering student with a passion for exploring the latest in technology and applying it to real-world solutions. I enjoy combining creativity with coding, building projects that make an impact, and continuously learning to expand my tech expertise.
         </p>
         <div className="flex justify-center lg:justify-start space-x-4 mb-8">
-          <button className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">Check Resume</button>
+        <a 
+            href={RESUME_PATH}
+            target="_blank" // Opens the PDF in a new tab
+            rel="noopener noreferrer" // Good practice for security with target="_blank"
+            className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-lg transition-colors inline-block" // Use inline-block to make the a tag act like a button
+          >
+            Check Resume
+          </a>
         </div>
         <div className="flex justify-center lg:justify-start space-x-6 text-2xl">
           {/* Social icons */}

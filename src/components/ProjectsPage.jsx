@@ -23,7 +23,7 @@ const featuredProjects = [
 
 function ProjectsPage() {
   return (
-    <div className="container mx-auto p-8 pt-16 md:p-16 text-white">
+    <div className="container mx-auto p-8 pt-16 md:p-16 text-white h-screen">
       {/* <h1 className="text-4xl md:text-5xl font-bold text-center text-purple-400 mb-4">Projects</h1>
       <div className="border-b-2 border-purple-400 w-24 mx-auto mb-16"></div>
       <div className="text-center mb-8">
