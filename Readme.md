@@ -21,7 +21,7 @@ To run the project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/AashiGarg-Tech/portfolio.git
+git clone https://github.com/AashiGarg-Tech/My-Portfolio.git
 
 # Navigate into the folder
 cd portfolio
