@@ -10,7 +10,7 @@ function HeroSection() {
     deleteSpeed: 80, // Speed of deleting
     delaySpeed: 1000, // Pause time before deleting
   });
-  const RESUME_PATH = '/Resume-Aashi Garg (2).pdf'; 
+  const RESUME_PATH = '/Aashi_Garg_resume (19).pdf'; 
   return (
     <section className="flex flex-col lg:flex-row items-center justify-center p-8 lg:p-16 text-white relative overflow-hidden flex-1 bg-[#0d0f19] min-h-screen">
       
