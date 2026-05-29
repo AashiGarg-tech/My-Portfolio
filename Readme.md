@@ -2,7 +2,9 @@
 
 This is my personal portfolio website, built with React to showcase my projects, skills, education, and experiences. It serves as a central hub where visitors can learn more about me and explore my work.
 
-## ✨ Features
+Live Demo: https://aashigarg-portfolio.netlify.app/
+
+## Features
 - **Home Page** – A short introduction and welcome section.
 - **About Me** – Information about my background and interests.
 - **Education** – Details of my academic journey.
@@ -10,13 +12,13 @@ This is my personal portfolio website, built with React to showcase my projects,
 - **Projects** – Selected projects with descriptions and links.
 - **Skills** – A summary of my technical and soft skills.
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Framework:** React  
 - **Styling:** Tailwind CSS 
 - **Routing:** React Router
 - **Hosting:** Netlify
 
-## 🚀 Getting Started
+## Getting Started
 To run the project locally:
 
 ```bash
