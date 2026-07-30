@@ -30,7 +30,7 @@ function Navbar() {
           
           {/* Logo/Name - Always Visible */}
           <div className="flex items-center">
-            <Link to="/" className="text-xl font-bold text-purple-400">
+            <Link to="/" className="text-xl font-bold text-[#f23562]">
               &lt;<span className="text-xl font-bold text-white">Aashi</span>/<span className="text-xl font-bold text-white">Garg</span>&gt;
             </Link>
           </div>
@@ -41,7 +41,7 @@ function Navbar() {
               <Link 
                 key={link.name} 
                 to={link.path} 
-                className="hover:text-purple-400 transition-colors text-lg"
+                className="hover:text-[#f23562] transition-colors text-lg"
               >
                 {link.name}
               </Link>
@@ -51,7 +51,7 @@ function Navbar() {
               href="https://github.com/AashiGarg-tech"
               target="_blank"
               rel="noopener noreferrer"
-              className="border-2 border-purple-400 rounded-lg px-4 py-2 hover:bg-purple-400 hover:text-white transition-colors"
+              className="border-2 border-[#f23562] rounded-lg px-4 py-2 hover:bg-[#f23562] hover:text-white transition-colors"
             >
               My Github
             </a>
@@ -61,7 +61,7 @@ function Navbar() {
           <div className="lg:hidden flex items-center">
             <button 
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-400"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#fa3c68]"
               aria-expanded={isOpen}
               aria-label="Toggle menu"
             >
@@ -83,7 +83,7 @@ function Navbar() {
               key={link.name} 
               to={link.path} 
               onClick={toggleMenu} // Close menu when a link is clicked
-              className="text-white hover:bg-gray-700 hover:text-purple-400 block w-full text-center px-3 py-2 rounded-md text-base font-medium"
+              className="text-white hover:bg-gray-700 hover:text-[#fa3c68] block w-full text-center px-3 py-2 rounded-md text-base font-medium"
             >
               {link.name}
             </Link>
@@ -95,7 +95,7 @@ function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={toggleMenu}
-            className="border-2 border-purple-400 rounded-lg w-3/4 my-2 px-4 py-2 text-center hover:bg-purple-400 transition-colors text-base font-medium inline-block"
+            className="border-2 border-[#fa3c68] rounded-lg w-3/4 my-2 px-4 py-2 text-center hover:bg-[#fa3c68] transition-colors text-base font-medium inline-block"
           >
             My Github
           </a>

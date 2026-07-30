@@ -1,124 +1,320 @@
-// src/pages/EducationPage.jsx
+import React, { useState } from "react";
+import {
+  FaGraduationCap,
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaChevronDown,
+  FaChevronUp,
+} from "react-icons/fa";
 
-import React from 'react';
-import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
+const educationData = [
+  {
+    id: 1,
+    school: "Greenway Modern School",
+    degree: "School Education",
+    duration: "2010 – 2022",
+    location: "Dilshad Garden, Delhi",
+    score: "98.8% (Class X)",
+    description:
+      "Built a strong academic foundation while actively participating in leadership, cultural activities and Olympiads.",
+    achievements: [
+      "98.8% in CBSE Class X",
+      "NCC A Grade Certificate",
+      "20+ SOF Gold Medals",
+      "1st Position - Zonal & District Singing Competition",
+    ],
+    skills: [
+      "Leadership",
+      "Communication",
+      "HTML",
+      "CSS",
+      "Teamwork",
+    ],
+  },
 
-const EducationPage = () => {
-  const educationData = [
-    {
-      title: 'Bachelor of Technology in Computer Science and Engineering (AI specialization)',
-      institution: 'Indira Gandhi Delhi Technical University For Women',
-      dates: '2024 - Present',
-      location: 'Kashmiri Gate, Delhi, India',
-      cgpa: '9.62/10',
-      description: 'Focused on software engineering principles, data structures, algorithms, and web development. Completed senior capstone project on distributed systems.',
-      achievements: [
-        'Secured 9.62 CGPA in 1st Year',
-        'Represented College in RBI State level quiz',
-        'IEEE (Tech) Associate',
-      ],
-      coursework: [
-        'Data Structures & Algorithms',
-        'CyberSecurity',
-        'Database Systems',
-        'Web Development',
-        'Artificial Intelligence',
-      ],
-    },
-    {
-      title: 'Student',
-      institution: 'The Vivekananda School',
-      dates: '2022-2024',
-      location: 'Narela, Delhi, India',
-      description: 'Studied in this school for 2 years. Made core memories and overall development.',
-      achievements: [
-        'Secured 94% in Class 12 (CBSE)',
-      ],
-      coursework: [
-        'Adaptability',
-        'Flexibility'
-      ],
-    },
-    {
-      title: 'Student',
-      institution: 'Greenway Modern School',
-      dates: '2010 - 2022',
-      location: 'Dilshad Garden, Delhi, India',
-      description: 'Studied in this school till 10th grade. It made my childhood memorable and provided me invaluable experiences.',
-      achievements: [
-        '1st in class 10 (CBSE)- 98.8%',
-        'NCC (A Grade Certificate)',
-        '1st Position in Zonal and District level Singing Competition',
-        '20+ SOF Gold Medals',
-      ],
-      coursework: [
-        'Leadership',
-        'Teamwork',
-        'communication skills',
-        'HTML',
-        'CSS',
-      ],
-    },
-  ];
+  {
+    id: 2,
+    school: "The Vivekananda School",
+    degree: "Senior Secondary",
+    duration: "2022 – 2024",
+    location: "Delhi",
+    score: "94% (Class XII)",
+    description:
+      "Completed higher secondary education with focus on academics and personal development.",
+    achievements: ["94% in CBSE Class XII"],
+    skills: ["Adaptability", "Flexibility"],
+  },
 
-  const renderEducationItem = (item, index) => {
-    const isEven = index % 2 === 0;
-    const contentClasses = isEven ? 'lg:pr-12' : 'lg:pl-12';
-    const positionClasses = isEven ? 'lg:col-start-1 lg:text-left' : 'lg:col-start-2';
-    const dotClasses = isEven ? '-right-2 lg:-right-2' : '-left-2 lg:-left-2';
+  {
+    id: 3,
+    school:
+      "Indira Gandhi Delhi Technical University for Women",
+    degree: "B.Tech CSE (AI)",
+    duration: "2024 – Present",
+    location: "Delhi",
+    score: "CGPA 9.81",
+    description:
+      "Pursuing Computer Science with Artificial Intelligence while working on full-stack development, machine learning and research.",
+    achievements: [
+      "Perfect 10 SGPA in 2nd Year",
+      "Codeslayer 2k25 Finalist",
+      "Research Paper accepted at NLPIR 2025",
+      "Top 10 IEEE Open Source Week",
+      "2nd Position Snowscript Winter of Code",
+    ],
+    skills: [
+      "React",
+      "Node.js",
+      "Python",
+      "AI",
+      "DSA",
+      "MongoDB",
+      "PostgreSQL",
+    ],
+  },
+];
 
-    return (
-      <div key={index} className="flex flex-col lg:grid lg:grid-cols-2 relative mb-12">
-        {/* Timeline Dot */}
-        {/* <div className={`absolute top-0 transform -translate-x-1/2 h-4 w-4 rounded-full bg-purple-500 border-2 border-white ${dotClasses}`}></div> */}
+function EducationPage() {
+  const [selected, setSelected] = useState(3);
 
-        {/* Content Box */}
-        <div className={`bg-[#12141f] p-6 rounded-lg shadow-lg ${contentClasses} ${positionClasses} mt-4`}>
-          <h3 className="text-2xl font-bold text-white">{item.institution}</h3>
-          <p className="text-purple-400 font-semibold mb-2">{item.title}</p>
-          <div className="flex items-center text-gray-400 text-sm space-x-4 mb-4">
-            <span className="flex items-center">
-              <FaCalendarAlt className="mr-1" /> {item.dates}
-            </span>
-            <span className="flex items-center">
-              <FaMapMarkerAlt className="mr-1" /> {item.location}
-            </span>
-            {item.gpa && <span>GPA: {item.gpa}</span>}
-          </div>
-          <p className="text-gray-300 mb-4">{item.description}</p>
-          
-          <h4 className="font-semibold text-purple-400 mb-2">Key Achievements:</h4>
-          <ul className="list-disc list-inside text-gray-300 mb-4">
-            {item.achievements.map((achievement, i) => (
-              <li key={i}>{achievement}</li>
-            ))}
-          </ul>
-
-          <h4 className="font-semibold text-purple-400 mb-2">Skills Gained:</h4>
-          <div className="flex flex-wrap gap-2">
-            {item.coursework.map((course, i) => (
-              <span key={i} className="bg-[#242633] text-purple-300 text-sm px-3 py-1 rounded-full">{course}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  };
+  const current = educationData.find((e) => e.id === selected);
 
   return (
-    <div className="container mx-auto p-8 pt-16 md:p-16 text-white">
-      <h1 className="text-4xl md:text-5xl font-bold text-center text-purple-400 mb-4">Education</h1>
-      <div className="border-b-2 border-purple-400 w-32 mx-auto mb-16"></div>
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-0.5 h-full bg-purple-500"></div>
+    <div className="max-w-7xl mx-auto px-6 py-20 text-white">
+
+      {/* Heading */}
+
+      <div className="text-center mb-20">
+
+        <h1 className="text-5xl md:text-6xl font-bold text-[#fa3c68]">
+          Education
+        </h1>
+
+        <div className="mt-5 flex justify-center">
+          <div className="h-[3px] w-28 rounded-full bg-gradient-to-r from-transparent via-[#fa3c68] to-transparent"></div>
         </div>
-        <div className="relative max-w-4xl mx-auto">
-          {educationData.map((item, index) => renderEducationItem(item, index))}
-        </div>
+
       </div>
+            {/* Timeline */}
+
+            <div className="relative mb-16">
+
+{/* Line */}
+
+<div className="absolute top-7 left-0 w-full h-[3px] bg-white/10 rounded-full">
+  <div className="absolute inset-0 bg-gradient-to-r from-[#fa3c68]/70 to-[#fa3c68]/20 rounded-full"></div>
+</div>
+
+<div className="grid grid-cols-3 relative">
+
+  {educationData.map((item) => {
+
+    const active = selected === item.id;
+
+    return (
+      <div
+        key={item.id}
+        onClick={() => setSelected(item.id)}
+        className="cursor-pointer flex flex-col items-center group"
+      >
+
+        {/* Circle */}
+
+        <div
+          className={`
+          z-10
+          h-14
+          w-14
+          rounded-full
+          flex
+          items-center
+          justify-center
+          border-4
+          transition-all
+          duration-300
+          ${
+            active
+              ? "bg-[#fa3c68] border-white scale-110 shadow-[0_0_25px_rgba(250,60,104,.45)]"
+              : "bg-[#1c1e2c] border-[#fa3c68]/40 hover:border-[#fa3c68] hover:scale-105"
+          }
+        `}
+        >
+          <FaGraduationCap
+            className={`text-xl ${
+              active ? "text-white" : "text-[#fa3c68]"
+            }`}
+          />
+        </div>
+
+        {/* School */}
+
+        <h3
+          className={`mt-6 font-semibold text-center transition-all ${
+            active ? "text-white" : "text-gray-400"
+          }`}
+        >
+          {item.school}
+        </h3>
+
+        <p className="text-sm text-gray-500 mt-1">
+          {item.duration}
+        </p>
+
+      </div>
+    );
+
+  })}
+
+</div>
+
+</div>
+
+{/* Details Card */}
+
+<div
+className="
+  bg-[#141622]
+  rounded-3xl
+  border
+  border-white/5
+  p-8
+  transition-all
+  duration-300
+  hover:border-[#fa3c68]/25
+  hover:shadow-[0_15px_40px_rgba(250,60,104,.12)]
+"
+>
+
+<div className="flex flex-wrap items-center justify-between gap-5">
+
+  <div>
+
+    <h2 className="text-3xl font-bold">
+      {current.school}
+    </h2>
+
+    <p className="mt-2 text-[#fa3c68] text-lg">
+      {current.degree}
+    </p>
+
+  </div>
+
+  <div className="text-right">
+
+    <p className="text-2xl font-bold text-[#fa3c68]">
+      {current.score}
+    </p>
+
+  </div>
+
+</div>
+
+<div className="mt-3 flex flex-wrap gap-6 text-gray-400">
+
+  <span className="flex items-center gap-2">
+    <FaCalendarAlt />
+    {current.duration}
+  </span>
+
+  <span className="flex items-center gap-2">
+    <FaMapMarkerAlt />
+    {current.location}
+  </span>
+
+</div>
+
+<div className="border-t border-white/5 my-4"></div>
+        {/* Description */}
+
+        <p className="text-gray-300 leading-8">
+          {current.description}
+        </p>
+
+        {/* Achievements */}
+
+        <div className="mt-3">
+
+          <h3 className="text-xl font-semibold text-[#fa3c68] mb-5">
+            Key Achievements
+          </h3>
+
+          <div className="grid md:grid-cols-2 gap-4">
+
+            {current.achievements.map((item, index) => (
+              <div
+                key={index}
+                className="
+                  flex
+                  items-start
+                  gap-3
+                  bg-white/5
+                  rounded-xl
+                  p-4
+                  hover:bg-[#fa3c68]/10
+                  transition
+                "
+              >
+                <div className="mt-2 h-2 w-2 rounded-full bg-[#fa3c68] shrink-0"></div>
+
+                <p className="text-gray-300">
+                  {item}
+                </p>
+
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+
+        {/* Skills */}
+
+        <div className="mt-3">
+
+          <h3 className="text-xl font-semibold text-[#fa3c68] mb-5">
+            Skills Gained
+          </h3>
+
+          <div className="flex flex-wrap gap-3">
+
+            {current.skills.map((skill, index) => (
+              <span
+                key={index}
+                className="
+                  px-4
+                  py-2
+                  rounded-full
+                  bg-[#1b1d2a]
+                  border
+                  border-[#fa3c68]/20
+                  text-[#ff8cab]
+                  text-sm
+                  font-medium
+                  transition-all
+                  duration-300
+                  hover:bg-[#fa3c68]
+                  hover:text-white
+                  hover:border-[#fa3c68]
+                "
+              >
+                {skill}
+              </span>
+            ))}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* Quote */}
+
+      <div className="mt-16 text-center">
+
+      </div>
+
     </div>
   );
-};
+}
 
 export default EducationPage;
